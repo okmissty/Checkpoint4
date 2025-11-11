@@ -1035,6 +1035,14 @@
     <comp lib="3" loc="(410,330)" name="Comparator">
       <a name="width" val="26"/>
     </comp>
+    <comp lib="8" loc="(116,118)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Memory Controller"/>
+    </comp>
+    <comp lib="8" loc="(140,135)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Andy Quach &amp; Tyeon Ford"/>
+    </comp>
     <comp lib="8" loc="(440,190)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="if RAM &amp; WE=1 (sw)"/>
@@ -1206,29 +1214,37 @@
     <comp lib="3" loc="(440,540)" name="Comparator">
       <a name="width" val="26"/>
     </comp>
-    <comp lib="8" loc="(319,640)" name="Text">
+    <comp lib="8" loc="(116,318)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Andy Quach &amp; Tyeon Ford"/>
+    </comp>
+    <comp lib="8" loc="(315,640)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="if 0x3ffff10 &amp; WE=0 (lw) -&gt; keyb status to data bus"/>
     </comp>
-    <comp lib="8" loc="(322,578)" name="Text">
+    <comp lib="8" loc="(320,575)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="if 0x3ffff14 &amp; WE=0 (lw) -&gt; keyb data to data bus"/>
     </comp>
-    <comp lib="8" loc="(332,444)" name="Text">
+    <comp lib="8" loc="(330,440)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="if 0x3ffff10 &amp; WE=1 (sw) -&gt; send keyb read"/>
     </comp>
-    <comp lib="8" loc="(522,449)" name="Text">
+    <comp lib="8" loc="(520,445)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="keyb read"/>
     </comp>
-    <comp lib="8" loc="(523,588)" name="Text">
+    <comp lib="8" loc="(520,505)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="keyb data"/>
+    </comp>
+    <comp lib="8" loc="(520,585)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="keyb status"/>
     </comp>
-    <comp lib="8" loc="(524,509)" name="Text">
+    <comp lib="8" loc="(98,301)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
-      <a name="text" val="keyb data"/>
+      <a name="text" val="Keyboard Controller"/>
     </comp>
     <wire from="(240,720)" to="(460,720)"/>
     <wire from="(260,380)" to="(480,380)"/>
@@ -1387,23 +1403,23 @@
       <a name="label" val="RGB"/>
       <a name="width" val="24"/>
     </comp>
-    <comp lib="8" loc="(366,815)" name="Text">
+    <comp lib="8" loc="(365,815)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="WE"/>
     </comp>
-    <comp lib="8" loc="(370,697)" name="Text">
-      <a name="font" val="SansSerif plain 12"/>
-      <a name="text" val="y cord"/>
-    </comp>
-    <comp lib="8" loc="(371,633)" name="Text">
+    <comp lib="8" loc="(370,630)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="x cord"/>
     </comp>
-    <comp lib="8" loc="(371,756)" name="Text">
+    <comp lib="8" loc="(370,695)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="y cord"/>
+    </comp>
+    <comp lib="8" loc="(370,755)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="internal color"/>
     </comp>
-    <comp lib="8" loc="(52,553)" name="Text">
+    <comp lib="8" loc="(54,558)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="RGB Controller"/>
     </comp>
@@ -1565,9 +1581,17 @@
     <comp lib="5" loc="(650,160)" name="Button">
       <a name="facing" val="west"/>
     </comp>
+    <comp lib="8" loc="(114,137)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Andy Quach &amp; Tyeon Ford"/>
+    </comp>
     <comp lib="8" loc="(715,165)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="FOR TESTING"/>
+    </comp>
+    <comp lib="8" loc="(90,120)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Terminal Controller"/>
     </comp>
     <wire from="(330,320)" to="(360,320)"/>
     <wire from="(340,300)" to="(360,300)"/>
@@ -1685,6 +1709,10 @@
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="1"/>
     </comp>
+    <comp lib="8" loc="(119,352)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Andy Quach &amp; Tyeon Ford"/>
+    </comp>
     <comp lib="8" loc="(605,600)" name="Text">
       <a name="text" val="3ffff84 + WE"/>
     </comp>
@@ -1693,6 +1721,10 @@
     </comp>
     <comp lib="8" loc="(610,540)" name="Text">
       <a name="text" val="3ffff80 + WE"/>
+    </comp>
+    <comp lib="8" loc="(91,337)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="Buzzer Controller"/>
     </comp>
     <comp lib="8" loc="(990,730)" name="Text">
       <a name="text" val="Current Setting"/>
