@@ -2185,6 +2185,10 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="$s1"/>
     </comp>
+    <comp lib="8" loc="(753,1372)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="$sp"/>
+    </comp>
     <comp lib="8" loc="(910,245)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="$v0"/>
