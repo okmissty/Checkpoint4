@@ -178,15 +178,15 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Write_enable"/>
     </comp>
-    <comp lib="8" loc="(958,1274)" name="Text">
+    <comp lib="8" loc="(955,1270)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Data"/>
     </comp>
-    <comp lib="8" loc="(974,1232)" name="Text">
+    <comp lib="8" loc="(970,1230)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="WE"/>
     </comp>
-    <comp lib="8" loc="(975,1254)" name="Text">
+    <comp lib="8" loc="(975,1250)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Address"/>
     </comp>
@@ -1077,7 +1077,7 @@
     <comp lib="3" loc="(410,330)" name="Comparator">
       <a name="width" val="26"/>
     </comp>
-    <comp lib="8" loc="(116,118)" name="Text">
+    <comp lib="8" loc="(115,115)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Memory Controller"/>
     </comp>
@@ -1256,7 +1256,7 @@
     <comp lib="3" loc="(440,540)" name="Comparator">
       <a name="width" val="26"/>
     </comp>
-    <comp lib="8" loc="(116,318)" name="Text">
+    <comp lib="8" loc="(115,315)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Andy Quach &amp; Tyeon Ford"/>
     </comp>
@@ -1284,7 +1284,7 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="keyb status"/>
     </comp>
-    <comp lib="8" loc="(98,301)" name="Text">
+    <comp lib="8" loc="(95,300)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Keyboard Controller"/>
     </comp>
@@ -1461,7 +1461,7 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="internal color"/>
     </comp>
-    <comp lib="8" loc="(54,558)" name="Text">
+    <comp lib="8" loc="(50,555)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="RGB Controller"/>
     </comp>
@@ -1623,7 +1623,7 @@
     <comp lib="5" loc="(650,160)" name="Button">
       <a name="facing" val="west"/>
     </comp>
-    <comp lib="8" loc="(114,137)" name="Text">
+    <comp lib="8" loc="(110,135)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Andy Quach &amp; Tyeon Ford"/>
     </comp>
@@ -1751,7 +1751,7 @@
       <a name="appearance" val="logisim_evolution"/>
       <a name="width" val="1"/>
     </comp>
-    <comp lib="8" loc="(119,352)" name="Text">
+    <comp lib="8" loc="(115,350)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Andy Quach &amp; Tyeon Ford"/>
     </comp>
@@ -1764,7 +1764,7 @@
     <comp lib="8" loc="(610,540)" name="Text">
       <a name="text" val="3ffff80 + WE"/>
     </comp>
-    <comp lib="8" loc="(91,337)" name="Text">
+    <comp lib="8" loc="(90,335)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="Buzzer Controller"/>
     </comp>
@@ -2177,6 +2177,10 @@
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="$t9"/>
     </comp>
+    <comp lib="8" loc="(750,1370)" name="Text">
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="text" val="$sp"/>
+    </comp>
     <comp lib="8" loc="(750,740)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="$t5"/>
@@ -2184,10 +2188,6 @@
     <comp lib="8" loc="(750,880)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
       <a name="text" val="$s1"/>
-    </comp>
-    <comp lib="8" loc="(753,1372)" name="Text">
-      <a name="font" val="SansSerif plain 12"/>
-      <a name="text" val="$sp"/>
     </comp>
     <comp lib="8" loc="(910,245)" name="Text">
       <a name="font" val="SansSerif plain 12"/>
@@ -5304,10 +5304,10 @@
     <comp lib="3" loc="(360,340)" name="Comparator">
       <a name="width" val="26"/>
     </comp>
-    <comp lib="8" loc="(213,294)" name="Text">
+    <comp lib="8" loc="(210,290)" name="Text">
       <a name="text" val="X Address"/>
     </comp>
-    <comp lib="8" loc="(213,357)" name="Text">
+    <comp lib="8" loc="(210,355)" name="Text">
       <a name="text" val="Y Address"/>
     </comp>
     <wire from="(270,150)" to="(390,150)"/>

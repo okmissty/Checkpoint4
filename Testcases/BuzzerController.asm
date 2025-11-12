@@ -1,4 +1,5 @@
 .text
+.main
 main:
   addi $sp,$0,-4096
   addi $t0,$0,440
