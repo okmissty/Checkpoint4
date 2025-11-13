@@ -8,3 +8,5 @@ main:
   sw   $t0,-124($0)     # 0x3FFFF84 vol
   sw   $0,-120($0)      # 0x3FFFF88 toggle ON
 spin: j spin
+
+# passed
