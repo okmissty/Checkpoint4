@@ -2,20 +2,17 @@
 .globl main
 
 main:
-    # Test basic R-type instruction
-    add $t0, $zero, $zero
+    # Load the hex display address into a register
+    # Address: 0x0FFFCC0 (which is 0x3FFFF30 >> 2 in word addressing)
+    lui $t0, 0x0FFF           # Load upper 16 bits: 0x0FFF0000
+    ori $t0, $t0, 0xCC0       # OR in lower 16 bits: 0x0FFFCC0
     
-    # Test I-type instruction - put value 0x1234 in register
-    addi $t1, $zero, 0x1234
+    # Load value to display (example: 0x12345678)
+    lui $t1, 0x1234           # Load upper: 0x12340000
+    ori $t1, $t1, 0x5678      # OR in lower: 0x12345678
     
-    # Test store instruction - store to address 5 (so hex display shows it)
-    sw $t1, 5($zero)
-    
-    # Test load instruction - load back from address 5
-    lw $t2, 5($zero)
-    
-    # Test branch instruction
-    beq $t1, $t2, end
+    # Store to hex display address - this triggers write enable
+    sw $t1, 0($t0)            # Write $t1 to address in $t0
     
 end:
     # Halt (infinite loop)
