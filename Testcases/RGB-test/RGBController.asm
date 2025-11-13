@@ -9,5 +9,5 @@ main:
   lui  $t0,0x00FF       # color 0x00FF00 (green) if you have lui; else add upper/low manually
   ori  $t0,$t0,0x0000
   sw   $t0,-216($0)
-  sw   $0,-212($0)      # draw
+  sw   $t0,-212($0)      # draw
 halt: j halt
