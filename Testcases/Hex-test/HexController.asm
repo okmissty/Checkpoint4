@@ -1,5 +1,5 @@
 .text
-.globl main
+.main
 main:
     addi $sp,$0,-4096
 
