@@ -15,17 +15,13 @@ loop_digits:
     # Write to hex display: address 0x3FFFF30 == 0xFFFFFF30 == -208
     sw   $t1,-208($0)     # HexController should show hex digit t0
 
-    ########################################################
     # Simple delay so you can see the digit change
-    ########################################################
-    addi $t2,$0,30000     # adjust this bigger/smaller as needed
+    addi $t2,$0,15     # adjust this bigger/smaller as needed
 delay:
     addi $t2,$t2,-1
     bne  $t2,$0,delay
 
-    ########################################################
     # Next digit: 0,1,2,...,15 then wrap back to 0
-    ########################################################
     addi $t0,$t0,1        # digit++
 
     addi $t3,$0,16        # limit = 16
