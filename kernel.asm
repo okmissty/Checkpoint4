@@ -19,7 +19,6 @@ __SYSCALL_Dispatcher__:
     # of the `syscall` instruction in $k0 instead of PC+4. Ensure $k0
     # points to the instruction after the `syscall` so `jr $k0` returns
     # to the correct place in user code.
-    addi $k0, $k0, 4
     beq  $v0, $zero, Syscall0       # Boot/initialization
     addi $k1, $zero, 1
     beq  $v0, $k1, Syscall1         # Print integer
