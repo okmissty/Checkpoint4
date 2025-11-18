@@ -7,9 +7,13 @@
 # ============================================================================
 # When syscall instruction executes:
 #   - PC jumps to address 0 (here)
-#   - Return address stored in $k0
+#   - Return address (PC+4) stored in $k0
 #   - Syscall code in $v0
 #   - Arguments in $a0, $a1, $a2, $a3
+# 
+# IMPORTANT: Your CPU does jalr $0, $k0 which means:
+#   - $k0 = PC + 4 (next instruction after syscall)
+#   - PC = 0 (jump to kernel)
 
     # Branch to appropriate syscall handler based on $v0
     beq $v0, $zero, Syscall0     # Boot/initialization
@@ -52,7 +56,7 @@ Syscall0:
 # ============================================================================
 # Input: $a0 = integer to print (signed)
 # Output: Prints integer to terminal
-# Terminal address: 0xFFFF0008 (data), 0xFFFF000C (control)
+# Terminal address: 0x3FFFF00 (data)
 Syscall1:
     # Save registers (all except $k0, $k1)
     addi $sp, $sp, -24
@@ -70,8 +74,8 @@ Syscall1:
     
     # Print minus sign
     addi $t2, $zero, 45           # ASCII '-'
-    lui $t3, 0xFFFF
-    ori $t3, $t3, 0x0008
+    lui $t3, 0x3FFF
+    ori $t3, $t3, 0x0F00
     sw $t2, 0($t3)                # Write to terminal
     
     # Make number positive
@@ -99,8 +103,8 @@ Syscall1_ConvertLoop:
     bne $t0, $zero, Syscall1_ConvertLoop
     
     # Now print digits from stack
-    lui $t3, 0xFFFF
-    ori $t3, $t3, 0x0008          # Terminal data address
+    lui $t3, 0x3FFF
+    ori $t3, $t3, 0x0F00          # Terminal data address
     
 Syscall1_PrintLoop:
     lb $t4, 0($t2)                # Load digit
@@ -125,7 +129,7 @@ Syscall1_PrintLoop:
 # ============================================================================
 # Input: Reads from keyboard until newline
 # Output: $v0 = integer read (signed)
-# Keyboard address: 0xFFFF0000 (data), 0xFFFF0004 (control)
+# Keyboard address: 0x3FFFF10 (data), 0x3FFFF14 (control)
 Syscall5:
     # Save registers
     addi $sp, $sp, -28
@@ -141,9 +145,10 @@ Syscall5:
     add $t1, $zero, $zero         # $t1 = is_negative flag
     addi $t2, $zero, 10           # $t2 = multiplier (10)
     
-    lui $t3, 0xFFFF
-    ori $t3, $t3, 0x0000          # $t3 = keyboard data address
-    ori $t4, $t3, 0x0004          # $t4 = keyboard control address
+    lui $t3, 0x3FFF
+    ori $t3, $t3, 0x0F10          # $t3 = keyboard data address
+    lui $t4, 0x3FFF
+    ori $t4, $t4, 0x0F14          # $t4 = keyboard control address
 
 Syscall5_ReadLoop:
     # Wait for character
@@ -247,15 +252,16 @@ Syscall10_Loop:
 # ============================================================================
 # Input: $a0 = character to print (ASCII)
 # Output: Prints character to terminal
+# Terminal is at 0x3FFFF00 (data register only)
 Syscall11:
     # Save registers
     addi $sp, $sp, -8
     sw $t0, 0($sp)
     sw $a0, 4($sp)
     
-    # Write to terminal
-    lui $t0, 0xFFFF
-    ori $t0, $t0, 0x0008          # Terminal data address
+    # Write to terminal data register
+    lui $t0, 0x3FFF
+    ori $t0, $t0, 0xF00          # Terminal data address
     sw $a0, 0($t0)                # Write character
     
     # Restore registers
@@ -270,15 +276,17 @@ Syscall11:
 # ============================================================================
 # Input: Waits for keyboard input
 # Output: $v0 = character read (ASCII)
+# Keyboard data at 0x3FFFF10, control/status at 0x3FFFF14
 Syscall12:
     # Save registers
     addi $sp, $sp, -8
     sw $t0, 0($sp)
     sw $t1, 4($sp)
     
-    lui $t0, 0xFFFF
-    ori $t0, $t0, 0x0000          # Keyboard data address
-    ori $t1, $t0, 0x0004          # Keyboard control address
+    lui $t0, 0x3FFF
+    ori $t0, $t0, 0xF10           # Keyboard data address
+    lui $t1, 0x3FFF
+    ori $t1, $t1, 0xF14           # Keyboard control address
     
     # Wait for character
 Syscall12_Wait:
